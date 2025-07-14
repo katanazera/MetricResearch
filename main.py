@@ -40,9 +40,8 @@ embeddings = [normalize_vector(embedding.embed_query(text)) for text in texts]
 pairs = [(0,1),(0,2),(1,2)]
 
 if __name__ == "__main__":
-    for ind, (i,j) in enumerate(pairs):
+    for i,j in pairs:
         a,b = embeddings[i], embeddings[j]
-
         print(f'Compare text {i+1} and {j+1}')
         print('Euclidean: ',euclidean_distance(a,b))
         print('Manhattan: ',manhattan_distance(a,b))
